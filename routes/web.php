@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/sample', function () {
+//     $organizers = ['Eric', 'John', 'Marcus'];
+//     return view('sample')->with('organizers', $organizers);
+// });
+
+// Route::get('/sample2', function () {
+//     $name = 'Eric';
+//     $talk = 'Intro to Laravel';
+//     $twitter = 'shocm';
+//     $date = date('Y-m-d');
+//     return view('sample2', compact('name', 'date', 'talk', 'twitter'));
+// });
+
+Route::get('/sample3', 'SampleController@index');
