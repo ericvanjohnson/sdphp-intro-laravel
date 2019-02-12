@@ -36,6 +36,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('posts', function(){
-    return Post::with('user')->get();
-});
+// Route::get('posts', function(){
+//     return Post::with('user')->get();
+// });
+
+Route::get('/posts', 'PostController@index');
+Route::get('/post/{post}', 'PostController@show');

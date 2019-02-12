@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::with('author')->paginate(5);
+
+        return view('posts')->with('posts', $posts);
     }
 
     /**
@@ -46,7 +48,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post')->with('post', $post);
     }
 
     /**
