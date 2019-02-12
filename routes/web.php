@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +30,12 @@ Route::get('/', function () {
 //     return view('sample2', compact('name', 'date', 'talk', 'twitter'));
 // });
 
-Route::get('/sample3', 'SampleController@index');
+// Route::get('/sample3', 'SampleController@index');
 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('posts', function(){
+    return Post::with('user')->get();
+});
